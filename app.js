@@ -32,8 +32,7 @@
 
 
 
-console.log
-// THIS COMMENT
+
 
 
 // NASA API Key
