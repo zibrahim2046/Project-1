@@ -38,4 +38,17 @@
 // NASA API Key
 var queryURL = "https://api.nasa.gov/planetary/apod?api_key=qOQWT3kOVH0hl4NkLUHSfu1yPdUkgK35QHeAwqxI"
 
+// AJAX call 
+$.ajax({
+    url: queryURL,
+    method: "GET"
+});
+
 // Define Variables
+
+var rocketType
+var rocketSpeed
+var targetPlanet
+var targetDistance
+var planetInfo
+var currentDate
