@@ -42,7 +42,7 @@ var queryURL = "https://api.nasa.gov/planetary/apod?api_key=qOQWT3kOVH0hl4NkLUHS
 $.ajax({
     url: queryURL,
     method: "GET"
-});
+}).then();
 
 // Define Variables
 
