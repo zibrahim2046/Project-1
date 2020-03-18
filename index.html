@@ -1,88 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>
-      National Lampoon's Space Vacation |Your One Stop Shop for Space Adventures
-    </title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="We need a description for NLSV" />
-    <meta name="robots" content="=index, follow" />
-    <!-- <link rel="icon" href="/Astronaut_icon-icons.com_54211.ico" /> -->
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  </head>
 
-  <body>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">SPACE VACATION!</h1>
-        <button>Home</button>
-        <button>Travel Time</button>
-        <button>Fun Facts</button>
-        <button>Rocket Info</button>
-      </div>
-    </div>
+<head>
+  <title>
+    National Lampoon's Space Vacation |Your One Stop Shop for Space Adventures
+  </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="We need a description for NLSV" />
+  <meta name="robots" content="=index, follow" />
+  <!-- <link rel="icon" href="/Astronaut_icon-icons.com_54211.ico" /> -->
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
 
+<body>
+  <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card rockets">
-            <div class="card-header">
-              Rockets
-            </div>
-            <div class="card-body">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Rocket 1</li>
-                <li class="list-group-item">Rocket 2</li>
-                <li class="list-group-item">Rocket 3</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="card planets">
-                <div class="card-header">
-                    Planets
-                </div>
-                <div class="card-body">
-
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="card date">
-            <div class="card-header">
-              Date
-            </div>
-            <div class="card-body">
-              <form>
-
-              </form>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="card choices">
-                <div class="card-header">
-                    Your Choices
-                </div>
-                <div class="card-body">
-
-                </div>
-            </div>
-        </div>
-      </div>
-
-
+      <h1 class="display-4">SPACE VACATION!</h1>
+      <button>Home</button>
+      <button>Travel Time</button>
+      <button>Fun Facts</button>
+      <button>Rocket Info</button>
     </div>
-    <script src="assets/javascript/app.js"></script>
-  </body>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card rockets">
+          <div class="card-header">
+            Rockets
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Rocket 1</li>
+              <li class="list-group-item">Rocket 2</li>
+              <li class="list-group-item">Rocket 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card planets-container">
+          <div class="card-header">
+            Planets
+          </div>
+          <div class="card-body planets">
+            <div class="planet-container">
+              <img class="planet" src="assets/images/mercury.jpg" alt="Mercury" data="mercury" />
+              <h3>Mercury</h3>
+            </div>
+            <div class="planet-container">
+              <img class="planet" src="assets/images/venus.jpg" alt="Venus" data="venus" />
+            </div>
+            <div class="planet-container">
+              <img class="planet" src="assets/images/mars.jpg" alt="Mars" data="mars" />
+            </div>
+            <div class="planet-container">
+              <img class="planet" src="assets/images/jupiter.jpg" alt="Jupiter" data="jupiter" />
+            </div>
+            <div class="planet-container">
+              <img class="planet" src="assets/images/saturn.jpg" alt="Saturn" data="saturn" />
+            </div>
+            <div class="planet-container">
+              <img class="planet" src="assets/images/uranus.jpg" alt="Uranus" data="uranus"/>
+            </div>
+            <div class="planet-container">
+              <img class="planet" src="assets/images/neptune.jpg" alt="Neptune" data="neptune" />
+            </div>
+            <div class="planet-container">
+              <img class="planet" src="assets/images/pluto.jpg" alt="pluto" data="pluto" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card date">
+          <div class="card-header">
+            Date
+          </div>
+          <div class="card-body">
+            <form></form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card choices">
+          <div class="card-header">
+            Your Choices
+          </div>
+          <div class="card-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/javascript/app.js"></script>
+</body>
+
 </html>
