@@ -1,3 +1,36 @@
 body {
-    background-image: url("../images/background.jpg");
+  background-image: url("https://www.imcdb.org/i014240.jpg");
+}
+  
+.jumbotron {
+  background-image: url(https://www.imcdb.org/i014240.jpg);
+  background-size: cover;
+  height: 100%;}
+
+h1 {
+  p:hover; h1:hover, a:hover
+  background-color: #949290;
+  @font-face {
+    font-family: "Oxanium";
+    src: url(https://fonts.google.com/specimen/Oxanium?selection.family=Oxanium);
+    font-weight: normal;
+    font-style: normal;
+  }
+
+button {
+  background-color: #492f2f;
+}
+
+.rockets {
+  background-color: #949290;
+}
+.date {
+  background-color: #949290;
+}
+
+.planets {
+  background-color: #949290;
+}
+.choices {
+  background-color: #949290;
 }
