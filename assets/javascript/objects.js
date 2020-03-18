@@ -90,3 +90,10 @@ var planets = {
     }
 
 }
+
+// Speed in mph
+var rockets = {
+    starship: 8300,
+    be4: "",
+    sls: "" 
+} 

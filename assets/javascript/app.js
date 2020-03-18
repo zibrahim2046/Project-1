@@ -111,3 +111,8 @@ $.ajax({
     console.log(response.aphelion);
     console.log(response.perihelion);
 })
+
+
+var queryURLNASA = "https://api.nasa.gov/planetary/apod?api_key=j60JkOzXbADJPsSK8BOOcugy5DUcbod09yAgXDhx"
+
+
