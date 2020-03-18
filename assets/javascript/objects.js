@@ -1,4 +1,3 @@
-
 var planets = {
     mercury: {
         surfaceTempMin: "-290",
@@ -91,23 +90,3 @@ var planets = {
     }
 
 }
-
-console.log(planets.neptune.rotation);
-
-var userPlanet = "pluto"
-var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet
-
-
-
-
-$.ajax({
-    url: queryURL,
-    method: "GET"
-})
-.then(function(response) {
-    console.log(response);
-    console.log(response.moons.length);
-    console.log(response.gravity);
-    console.log(response.aphelion);
-    console.log(response.perihelion);
-})
