@@ -1,3 +1,52 @@
 body {
     background-image: url("../images/background.jpg");
 }
+button {
+    background-color: skyblue;
+    font-family: Oxanium;
+    font-weight: bolder;
+
+    
+}
+button:hover{
+    background-color:#cc5500;
+}
+div{
+ background-color: whitesmoke
+}
+
+h1, h2, h3{
+    font-family: 'chango', cursive;
+    font-style: normal;
+    font-size: larger;
+    color: black;
+    }
+
+.rockets{
+    font-family: Oxanium;
+    font-size: larger;
+    font-weight: bold;
+    background-color:skyblue;
+}
+.planets{
+    background-color:skyblue;
+    font-family:Oxanium;
+    font-size: larger;
+    font-weight: bold;
+}
+.date{
+background-color:skyblue;
+font-family: Oxanium;
+font-size: larger;
+font-weight: bold;
+}
+.choices{
+background-color: skyblue;
+font-family: Oxanium;
+font-size: larger;
+font-weight: bold;
+}
+
+.jumbotron{
+    background-image: url("../images/background.jpg");
+}
