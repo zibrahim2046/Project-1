@@ -1,17 +1,12 @@
 body {
-    background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpg");
 }
-.planets{
-    
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-around;
-    
-    
+.planets {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
 }
-.planet{
-    width: 80px;
-   margin: 0;
-   height: 100%;
-
+.planet {
+  width: 80px;
+  height: 100%;
 }
