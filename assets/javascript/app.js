@@ -94,6 +94,11 @@ var planets = {
 var userPlanet = "";
 var planetImg = [];
 
+function clearStorage() {
+  localStorage.removeItem("plantImg");
+  
+}
+
 // Planet Info API
 //var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
 
@@ -156,8 +161,8 @@ function secondAPI() {
 
 }
 
-
-$(document).on("click",".imgPic",function() {
+function imgPush() {
+// $(document).on("click",".imgPic",function() {
   planetImg = JSON.parse(localStorage.getItem("planetImg"))
   console.log(planetImg)
   
@@ -165,7 +170,7 @@ $(document).on("click",".imgPic",function() {
     
     console.log(planetImg[j]);
     var picDiv = $("<div class = 'planet-imgs'>");
-    var planetImgTag = $("<img>");
+    var planetImgTag = $("<img class = 'display-images'>");
     planetImgTag.attr("src", planetImg[j]);
     planetImgTag.addClass("pic");
     // console.log("test");
@@ -173,7 +178,9 @@ $(document).on("click",".imgPic",function() {
     picDiv.prepend(planetImgTag);
     $(".planet-images").prepend(picDiv);
   }
-})
+// })
+
+}
 
 
 
