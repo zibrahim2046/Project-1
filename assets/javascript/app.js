@@ -99,17 +99,10 @@ function clearStorage() {
   
 }
 
-// Planet Info API
-//var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
-
-// NASA API
-// var queryURLNASA =
-  // "https://images-api.nasa.gov/search?q=venus&media_type=image";
-  //&api_key=j60JkOzXbADJPsSK8BOOcugy5DUcbod09yAgXDhx
-//console.log(queryURL);
 
 $(".planet").on("click", function() {
   userPlanet = $(this).attr("data");
+  localStorage.setItem("userPlanet", userPlanet);
   var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
   console.log(userPlanet);
   firstAPI();
@@ -127,6 +120,17 @@ function firstAPI() {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
+    if (userPlanet === "mercury" || userPlanet === "venus") {
+      localStorage.setItem("moons", 0);
+      localStorage.setItem("gravity", response.gravity);
+      localStorage.setItem("aphelion", response.aphelion);
+      localStorage.setItem("perihelion", response.perihelion);
+    } else {
+      localStorage.setItem("moons", response.moons.length);
+      localStorage.setItem("gravity", response.gravity);
+      localStorage.setItem("aphelion", response.aphelion);
+      localStorage.setItem("perihelion", response.perihelion);
+    }
     // console.log(response);
     // console.log(response.moons.length);
     // console.log(response.gravity);
@@ -145,15 +149,12 @@ function secondAPI() {
     url: queryURLNASA,
     method: "GET"
   }).then(function(responseNASA) {
-    // console.log(responseNASA);
-    // console.log(responseNASA.collection.items[1].links[0].href);
+    
     for(var i = 0; i < 4; i++) {
-      
       image = responseNASA.collection.items[i].links[0].href;
       planetImg.push(image);
       // console.log(planetImg[i]);
       localStorage.setItem("planetImg", JSON.stringify(planetImg));
-
   
     }
     
@@ -163,8 +164,9 @@ function secondAPI() {
 
 function imgPush() {
 // $(document).on("click",".imgPic",function() {
-  planetImg = JSON.parse(localStorage.getItem("planetImg"))
-  console.log(planetImg)
+  planetImg = JSON.parse(localStorage.getItem("planetImg"));
+  console.log(planetImg);
+  userPlanetStored = localStorage.getItem("userPlanet");
   
   for (var j = 0; j < 4; j++) {
     
@@ -173,11 +175,22 @@ function imgPush() {
     var planetImgTag = $("<img class = 'display-images'>");
     planetImgTag.attr("src", planetImg[j]);
     planetImgTag.addClass("pic");
-    // console.log("test");
-    // console.log(responseNASA.collection.items[i].links[0].href);
+    
     picDiv.prepend(planetImgTag);
     $(".planet-images").prepend(picDiv);
   }
+    var factsDiv = $("<div class = 'theFacts'>");
+    
+    var moonsDiv = $("<p class = 'facts'>");
+    moonsDiv.prepend("Number of Moons:  " + localStorage.getItem("moons"));
+    factsDiv.prepend(moonsDiv)
+
+    var minTemp = $("<p class ='facts'>");
+    a = planets[userPlanetStored].surfaceTempMin
+    minTemp.prepend("Maximum Temperature:  " + a + "<sup>'o'</sup>'F'");
+    factsDiv.append(minTemp);
+
+    $(".theFacts").prepend(factsDiv)
 // })
 
 }
