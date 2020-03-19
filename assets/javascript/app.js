@@ -32,8 +32,8 @@ var planets = {
   mars: {
     surfaceTempMin: "-195",
     surfaceTempMax: "70",
-    rotation: "1 Earth day and 6hours",
-    dayLength: "1 Earth day and 6hours",
+    rotation: "1 Earth day and 6 hours",
+    dayLength: "1 Earth day and 6 hours",
     daysPerYear: "669 Earth days",
     link: "https://nineplanets.org/mars/",
     size: "Just over 1/2 the surface area of Earth",
@@ -99,22 +99,18 @@ function clearStorage() {
   
 }
 
-
 $(".planet").on("click", function() {
   userPlanet = $(this).attr("data");
   localStorage.setItem("userPlanet", userPlanet);
   var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
-  console.log(userPlanet);
+  
   firstAPI();
   secondAPI();
 });
 
-
-
 function firstAPI() {
   var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
-    // console.log(userPlanet);
-    // console.log(queryURL);
+    
 
   $.ajax({
     url: queryURL,
@@ -131,11 +127,7 @@ function firstAPI() {
       localStorage.setItem("aphelion", response.aphelion);
       localStorage.setItem("perihelion", response.perihelion);
     }
-    // console.log(response);
-    // console.log(response.moons.length);
-    // console.log(response.gravity);
-    // console.log(response.aphelion);
-    // console.log(response.perihelion);
+   
   });
 
 }
@@ -153,7 +145,7 @@ function secondAPI() {
     for(var i = 0; i < 4; i++) {
       image = responseNASA.collection.items[i].links[0].href;
       planetImg.push(image);
-      // console.log(planetImg[i]);
+      
       localStorage.setItem("planetImg", JSON.stringify(planetImg));
   
     }
@@ -181,14 +173,67 @@ function imgPush() {
   }
     var factsDiv = $("<div class = 'theFacts'>");
     
-    var moonsDiv = $("<p class = 'facts'>");
-    moonsDiv.prepend("Number of Moons:  " + localStorage.getItem("moons"));
-    factsDiv.prepend(moonsDiv)
+    var moonsPar = $("<p class = 'facts'>");
+    moonsPar.prepend("Number of Moons:  " + localStorage.getItem("moons"));
+    factsDiv.prepend(moonsPar);
+
+    var gravityPar = $("<p class = 'facts'>");
+    gravityPar.prepend("Gravity:  " + localStorage.getItem("gravity") + " m/s <sup>2</sup>");
+    factsDiv.append(gravityPar);
 
     var minTemp = $("<p class ='facts'>");
-    a = planets[userPlanetStored].surfaceTempMin
-    minTemp.prepend("Maximum Temperature:  " + a + "<sup>'o'</sup>'F'");
+    a = planets[userPlanetStored].surfaceTempMin;
+    minTemp.prepend("Minimum Temperature:  " + a + "<sup>o</sup>F");
     factsDiv.append(minTemp);
+
+    var maxTemp = $("<p class ='facts'>");
+    b = planets[userPlanetStored].surfaceTempMax;
+    maxTemp.prepend("Maximum Temperature:  " + b + "<sup>o</sup>F");
+    factsDiv.append(maxTemp);
+
+    var rotate = $("<p class ='facts'>");
+    c = planets[userPlanetStored].rotation;
+    rotate.prepend("Rotation:  " + c);
+    factsDiv.append(rotate);
+
+    var day = $("<p class ='facts'>");
+    d = planets[userPlanetStored].dayLength;
+    day.prepend("length of day:  " + d);
+    factsDiv.append(day);
+
+    var year = $("<p class ='facts'>");
+    e = planets[userPlanetStored].daysPerYear;
+    year.prepend("Days per year:  " + e);
+    factsDiv.append(year);
+
+    var howBig = $("<p class ='facts'>");
+    f = planets[userPlanetStored].size;
+    howBig.prepend("Size:  " + f);
+    factsDiv.append(howBig);
+
+    var planetType = $("<p class ='facts'>");
+    g = planets[userPlanetStored].type
+    planetType.prepend("Type of Planet:  " + g);
+    factsDiv.append(planetType);
+
+    var aphelionPar = $("<p class = 'facts'>");
+    var aphelionDisMiles = parseInt(localStorage.getItem("aphelion") * .621371);
+    var y = aphelionDisMiles.toLocaleString();
+    aphelionPar.prepend("Furthest distance from the Sun:  " + y + " Miles");
+
+
+    factsDiv.append(aphelionPar);
+
+    var perihelionPar = $("<p class = 'facts'>");
+    var perihelionDisMiles = parseInt(localStorage.getItem("perihelion") * .621371)
+    var x = perihelionDisMiles.toLocaleString();
+    perihelionPar.prepend("Shortest distance from the Sun:  " + x + " Miles");
+    factsDiv.append(perihelionPar);
+
+    var planetLink = $("<p class ='facts'>");
+    h = planets[userPlanetStored].link
+    planetLink.prepend("Type of Planet:  " + h);
+    factsDiv.append(planetType);
 
     $(".theFacts").prepend(factsDiv)
 // })
