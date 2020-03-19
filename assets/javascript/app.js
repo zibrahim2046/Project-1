@@ -89,9 +89,11 @@ var planets = {
   }
 };
 
-console.log(planets.neptune.rotation);
+// console.log(planets.neptune.rotation);
 
 var userPlanet = "";
+var planetImg = [];
+
 // Planet Info API
 //var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
 
@@ -132,14 +134,48 @@ function firstAPI() {
 function secondAPI() {
   
   var queryURLNASA = "https://images-api.nasa.gov/search?q=" + userPlanet + "&media_type=image";
-  console.log(userPlanet);
+  // console.log(userPlanet);
 
   $.ajax({
     url: queryURLNASA,
     method: "GET"
   }).then(function(responseNASA) {
-    console.log(responseNASA);
-    console.log(responseNASA.collection.items[1]);
+    // console.log(responseNASA);
+    // console.log(responseNASA.collection.items[1].links[0].href);
+    for(var i = 0; i < 4; i++) {
+      
+      image = responseNASA.collection.items[i].links[0].href;
+      planetImg.push(image);
+      // console.log(planetImg[i]);
+      localStorage.setItem("planetImg", JSON.stringify(planetImg));
+
+  
+    }
+    
   });
 
 }
+
+
+$(document).on("click",".imgPic",function() {
+  planetImg = JSON.parse(localStorage.getItem("planetImg"))
+  console.log(planetImg)
+  
+  for (var j = 0; j < 4; j++) {
+    
+    console.log(planetImg[j]);
+    var picDiv = $("<div class = 'planet-imgs'>");
+    var planetImgTag = $("<img>");
+    planetImgTag.attr("src", planetImg[j]);
+    planetImgTag.addClass("pic");
+    // console.log("test");
+    // console.log(responseNASA.collection.items[i].links[0].href);
+    picDiv.prepend(planetImgTag);
+    $(".planet-images").prepend(picDiv);
+  }
+})
+
+
+
+
+
