@@ -7,7 +7,9 @@ var planets = {
     daysPerYear: "88 Earth days",
     link: "https://nineplanets.org/mercury/",
     size: "7 times less surface area than Earth",
-    type: "Rocky, Terrestrial"
+    type: "Rocky, Terrestrial",
+    distance: "78 million miles",
+    travelTime: "130 days"
   },
   venus: {
     surfaceTempMin: "870",
@@ -17,7 +19,9 @@ var planets = {
     daysPerYear: "225 Earth days",
     link: "https://nineplanets.org/venus/",
     size: "10% less surface area than Earth",
-    type: "Rocky, Terrestrial"
+    type: "Rocky, Terrestrial",
+    distance: "69 million miles",
+    travelTime: "115 days"
   },
   earth: {
     surfaceTempMin: "-129",
@@ -27,7 +31,8 @@ var planets = {
     daysPerYear: "365 Earth days",
     link: "https://nineplanets.org/earth/",
     size: "",
-    type: "Rocky, Terrestrial"
+    type: "Rocky, Terrestrial",
+    
   },
   mars: {
     surfaceTempMin: "-195",
@@ -37,7 +42,9 @@ var planets = {
     daysPerYear: "669 Earth days",
     link: "https://nineplanets.org/mars/",
     size: "Just over 1/2 the surface area of Earth",
-    type: "Rocky, Terrestrial"
+    type: "Rocky, Terrestrial",
+    distance: "145 million miles",
+    travelTime: "241 days"
   },
   jupiter: {
     surfaceTempMin: "(Atmosphere) -229",
@@ -47,7 +54,9 @@ var planets = {
     daysPerYear: "12 Earth years",
     link: "https://nineplanets.org/jupiter/",
     size: "122 times more surface area than Earth",
-    type: "Gas Giant"
+    type: "Gas Giant",
+    distance: "512 million miles",
+    travelTime: "853 days"
   },
   saturn: {
     surfaceTempMin: "(Atmosphere) -288",
@@ -57,7 +66,9 @@ var planets = {
     daysPerYear: "29.5 Earth years",
     link: "https://nineplanets.org/saturn/",
     size: "83 times more surface area than Earth",
-    type: "Gas Giant"
+    type: "Gas Giant",
+    distance: "973 million miles",
+    travelTime: "1621 days"
   },
   uranus: {
     surfaceTempMin: "(Atmosphere) -371",
@@ -65,7 +76,9 @@ var planets = {
     daysPerYear: "84 Earth years",
     link: "https://nineplanets.org/uranus/",
     size: "16 times more surface area than Earth",
-    type: "Ice Giant"
+    type: "Ice Giant",
+    distance: "1.9 billion miles",
+    travelTime: "3166 days"
   },
   neptune: {
     surfaceTempMin: "(Atmosphere) -360",
@@ -75,7 +88,9 @@ var planets = {
     daysPerYear: "165 Earth years",
     link: "https://nineplanets.org/neptune/",
     size: "15 times more surface area than Earth",
-    type: "Ice Giant"
+    type: "Ice Giant",
+    distance: "2.8 billion miles",
+    travelTime: "4666 days"
   },
   pluto: {
     surfaceTempMin: "-400",
@@ -85,12 +100,14 @@ var planets = {
     daysPerYear: "248 Earth years",
     link: "https://nineplanets.org/pluto/",
     size: "30 times less surface area than Earth",
-    type: "Dwarf"
+    type: "Dwarf",
+    distance: "3.2 billion miles",
+    travelTime: "5333 days"
   }
 };
 
 // console.log(planets.neptune.rotation);
-
+var avgRocketSpeed = 25000;
 var userPlanet = "";
 var planetImg = [];
 
@@ -194,6 +211,16 @@ function imgPush() {
 // })
 
 }
+
+function launchInfo () {
+  destinationPlanet = localStorage.getItem("userPlanet");
+  var launchDiv = $("<div class = 'launch'>")
+  var planetDistance = $("<p class = 'facts'>");
+    planetDistance.prepend("Distance to  "+ destinationPlanet + " "+ planets[destinationPlanet].distance); 
+    launchDiv.prepend(planetDistance);
+$(".theLaunch").prepend(launchDiv)
+}
+console.log(avgRocketSpeed);
 
 
 
