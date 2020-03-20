@@ -20,3 +20,14 @@ body {
   height: 200px;
   margin-bottom: 5px;
 }
+
+.returnHome {
+  background: #7a3838;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}

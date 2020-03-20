@@ -10,7 +10,10 @@ var planets = {
     type: "Rocky, Terrestrial",
     distance: "78 million miles",
     travelTime: "130 days",
-    name: "Mercury"
+    name: "Mercury",
+    clothesDay: "Shorts and a tanktop, but mainly a spacesuit during the day",
+    clothesNight: "Biggest snowsuit you can find, but mainly a spacesuit at night",
+    sunscreen: "SPF 10,000 Sunscreen"
   },
   venus: {
     surfaceTempMin: "870",
@@ -23,7 +26,10 @@ var planets = {
     type: "Rocky, Terrestrial",
     distance: "69 million miles",
     travelTime: "115 days",
-    name: "Venus"
+    name: "Venus",
+    clothesDay: "Shorts and a tanktop, but mainly a spacesuit during the day",
+    clothesNight: "Shorts and a tanktop, but mainly a spacesuit during the day",
+    sunscreen: "SPF 10,000 Sunscreen"
   },
   earth: {
     surfaceTempMin: "-129",
@@ -47,7 +53,11 @@ var planets = {
     type: "Rocky, Terrestrial",
     distance: "145 million miles",
     travelTime: "241 days",
-    name: "Mars"
+    name: "Mars",
+    clothesDay: "Jeans and a funny tshirt, but mainly a spacesuit during the day",
+    clothesNight: "Biggest snowsuit you can find, but mainly a spacesuit at night",
+    sunscreen: "SPF 50 Sunscreen"
+    
   },
   jupiter: {
     surfaceTempMin: "(Atmosphere) -229",
@@ -60,7 +70,10 @@ var planets = {
     type: "Gas Giant",
     distance: "512 million miles",
     travelTime: "853 days",
-    name: "Jupiter"
+    name: "Jupiter",
+    clothesDay: "If you stay in the atmosphere stay in your spacesuit",
+    clothesNight: "See above and don't even think about going near the core",
+    sunscreen: "You won't even remember the sun exists"
   },
   saturn: {
     surfaceTempMin: "(Atmosphere) -288",
@@ -73,7 +86,10 @@ var planets = {
     type: "Gas Giant",
     distance: "973 million miles",
     travelTime: "1621 days",
-    name: "Saturn"
+    name: "Saturn",
+    clothesDay: "If you stay in the atmosphere stay in your spacesuit",
+    clothesNight: "See above and don't even think about going near the core",
+    sunscreen: "You won't even remember the sun exists"
   },
   uranus: {
     surfaceTempMin: "(Atmosphere) -371",
@@ -84,7 +100,10 @@ var planets = {
     type: "Ice Giant",
     distance: "1.9 billion miles",
     travelTime: "3166 days",
-    name: "Uranus"
+    name: "Uranus",
+    clothesDay: "You'd think ice skates with it being an ice giant but stay in your spacesuit",
+    clothesNight: "See above and don't even think about going near the core",
+    sunscreen: "You won't even remember the sun exists"
   },
   neptune: {
     surfaceTempMin: "(Atmosphere) -360",
@@ -97,7 +116,10 @@ var planets = {
     type: "Ice Giant",
     distance: "2.8 billion miles",
     travelTime: "4666 days",
-    name: "Neptune"
+    name: "Neptune",
+    clothesDay: "No ice skates here, stay in your spacesuit",
+    clothesNight: "See above and don't even think about going near the core",
+    sunscreen: "You won't even remember the sun exists"
   },
   pluto: {
     surfaceTempMin: "-400",
@@ -110,7 +132,10 @@ var planets = {
     type: "Dwarf",
     distance: "3.2 billion miles",
     travelTime: "5333 days",
-    name: "Pluto"
+    name: "Pluto",
+    clothesDay: "Apologize to Pluto for not being a full fledged planet anymore and wear your spacesuit",
+    clothesNight: "Do the same thing you do during the day",
+    sunscreen: "You won't even remember the sun exists"
   }
 };
 
@@ -180,7 +205,6 @@ function secondAPI() {
 }
 
 function imgPush() {
-// $(document).on("click",".imgPic",function() {
   planetImg = JSON.parse(localStorage.getItem("planetImg"));
   userPlanetStored = localStorage.getItem("userPlanet");
   
@@ -261,15 +285,30 @@ function imgPush() {
     planetLink.attr("href", link);
     planetLink.text("More Facts");
     planetLink.addClass("link");
-
     factsDiv.append(planetLink);
 
-
-
     $(".theFacts").prepend(factsDiv)
-// })
+
+    var toBring = $("<ul>");
+
+    var dayClothes = $("<li>");
+    dayClothes.prepend(planets[userPlanetStored].clothesDay);
+    toBring.append(dayClothes);
+
+    var nightClothes = $("<li>");
+    nightClothes.prepend(planets[userPlanetStored].clothesNight);
+    toBring.append(nightClothes); 
+
+    var SPF = $("<li>");
+    SPF.prepend(planets[userPlanetStored].sunscreen);
+    toBring.append(SPF);
+
+    $(".bringItems").append(toBring);
+
 
 }
+
+
 
 
 
