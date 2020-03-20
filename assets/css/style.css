@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+}
+
+.rockets {
+  width: 150px;
+  height: 150px;
+}
+
+.theRockets {
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+.col-sm-4 .planet {
+  width: 90%;
+  height: 150px;
+  margin-left: 5px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.col-sm-4 {
+  padding: 0;
+}
+
+.items {
+  margin-top: 5px;
+}
+
+.pic {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5px;
+}
+
+.returnHome {
+  background: #7a3838;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.choices {
+  margin-top: 5px;
+}
+
+.userChoice img {
+  width: 90%;
+  height: 90%;
+}
+
+.rocketChoice img {
+  width: 90%;
+  height: 200px;
+}
+
+.ready, .newTrip {
+  text-align: center;
+  margin: 10px;
+  /* background: #7a3838; */
+  border-radius: 20px;
+  background: #295b5c;
+  /* text-decoration: none;
+  color: #ffffff; */
+  font-size: 24px;
+  
+}
+
+div a {
+  text-decoration: none;
+  color: #ffffff;
+}
