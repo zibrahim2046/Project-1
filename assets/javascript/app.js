@@ -153,6 +153,8 @@ function clearStorage() {
 
 $(".planet-container").on("click", function() {
   $(".userChoice").empty();
+  $(".newTrip").empty();
+  $(".ready").empty();
   userPlanet = $(this).attr("data");
   planetPicked = true;
   // console.log(userPlanet);
@@ -181,6 +183,7 @@ $(".planet-container").on("click", function() {
 
 $(document).on("click", ".theRockets", function() {
   $(".rocketChoice").empty();
+  $(".ready").empty();
   rocketPicked = true;
   var rocketChoiceDiv = $("<div>");
   rocketChoiceDiv.prepend(this);
@@ -355,20 +358,18 @@ function launchInfo () {
     var travelTime = $("<p class = 'facts'>");
     travelTime.append("It will take you "+  " " + planets[destinationPlanet].travelTime + " to reach " + destinationPlanet);
     launchDiv.append(travelTime);
-$(".theLaunch").append(launchDiv);
-$(".theLaunch").prepend(launchDiv);
+  $(".theLaunch").append(launchDiv);
+  $(".theLaunch").prepend(launchDiv);
 
 var daysOfTravel = parseInt(planets[destinationPlanet].travelTime);
 var arrivalDate = moment().add(daysOfTravel, "days");
 var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
-console.log(finalDate);
+// console.log(finalDate);
+
+
 };
 
-// var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
-// console.log(currentDate);
 
-// var arrivalDate = moment().add(130, 'days')
-// console.log(arrivalDate);
 
 
 
