@@ -358,6 +358,10 @@ function launchInfo () {
 $(".theLaunch").append(launchDiv);
 $(".theLaunch").prepend(launchDiv);
 
+var daysOfTravel = parseInt(planets[destinationPlanet].travelTime);
+var arrivalDate = moment().add(daysOfTravel, "days");
+var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
+console.log(finalDate);
 };
 
 // var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
