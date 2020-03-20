@@ -11,12 +11,9 @@ var planets = {
     distance: "78 million miles",
     travelTime: "130 days",
     name: "Mercury",
-<<<<<<< HEAD
-=======
     clothesDay: "Shorts and a tanktop, but mainly a spacesuit during the day",
     clothesNight: "Biggest snowsuit you can find, but mainly a spacesuit at night",
     sunscreen: "SPF 10,000 Sunscreen"
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   },
   venus: {
     surfaceTempMin: "870",
@@ -29,15 +26,10 @@ var planets = {
     type: "Rocky, Terrestrial",
     distance: "69 million miles",
     travelTime: "115 days",
-<<<<<<< HEAD
-    name: "Venus"
-
-=======
     name: "Venus",
     clothesDay: "Shorts and a tanktop, but mainly a spacesuit during the day",
     clothesNight: "Shorts and a tanktop, but mainly a spacesuit during the day",
     sunscreen: "SPF 10,000 Sunscreen"
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   },
   earth: {
     surfaceTempMin: "-129",
@@ -61,15 +53,11 @@ var planets = {
     type: "Rocky, Terrestrial",
     distance: "145 million miles",
     travelTime: "241 days",
-<<<<<<< HEAD
-    name: "Mars"
-=======
     name: "Mars",
     clothesDay: "Jeans and a funny tshirt, but mainly a spacesuit during the day",
     clothesNight: "Biggest snowsuit you can find, but mainly a spacesuit at night",
     sunscreen: "SPF 50 Sunscreen"
     
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   },
   jupiter: {
     surfaceTempMin: "(Atmosphere) -229",
@@ -82,14 +70,10 @@ var planets = {
     type: "Gas Giant",
     distance: "512 million miles",
     travelTime: "853 days",
-<<<<<<< HEAD
-    name: "Jupiter"
-=======
     name: "Jupiter",
     clothesDay: "If you stay in the atmosphere stay in your spacesuit",
     clothesNight: "See above and don't even think about going near the core",
     sunscreen: "You won't even remember the sun exists"
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   },
   saturn: {
     surfaceTempMin: "(Atmosphere) -288",
@@ -102,14 +86,10 @@ var planets = {
     type: "Gas Giant",
     distance: "973 million miles",
     travelTime: "1621 days",
-<<<<<<< HEAD
-    name: "Saturn"
-=======
     name: "Saturn",
     clothesDay: "If you stay in the atmosphere stay in your spacesuit",
     clothesNight: "See above and don't even think about going near the core",
     sunscreen: "You won't even remember the sun exists"
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   },
   uranus: {
     surfaceTempMin: "(Atmosphere) -371",
@@ -120,14 +100,10 @@ var planets = {
     type: "Ice Giant",
     distance: "1.9 billion miles",
     travelTime: "3166 days",
-<<<<<<< HEAD
-    name: "Uranus"
-=======
     name: "Uranus",
     clothesDay: "You'd think ice skates with it being an ice giant but stay in your spacesuit",
     clothesNight: "See above and don't even think about going near the core",
     sunscreen: "You won't even remember the sun exists"
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   },
   neptune: {
     surfaceTempMin: "(Atmosphere) -360",
@@ -140,14 +116,10 @@ var planets = {
     type: "Ice Giant",
     distance: "2.8 billion miles",
     travelTime: "4666 days",
-<<<<<<< HEAD
-    name: "Neptune"
-=======
     name: "Neptune",
     clothesDay: "No ice skates here, stay in your spacesuit",
     clothesNight: "See above and don't even think about going near the core",
     sunscreen: "You won't even remember the sun exists"
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   },
   pluto: {
     surfaceTempMin: "-400",
@@ -160,14 +132,10 @@ var planets = {
     type: "Dwarf",
     distance: "3.2 billion miles",
     travelTime: "5333 days",
-<<<<<<< HEAD
-    name: "Pluto"
-=======
     name: "Pluto",
     clothesDay: "Apologize to Pluto for not being a full fledged planet anymore and wear your spacesuit",
     clothesNight: "Do the same thing you do during the day",
     sunscreen: "You won't even remember the sun exists"
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
   }
 };
 
@@ -386,29 +354,14 @@ function launchInfo () {
     launchDiv.append(travelTime);
 $(".theLaunch").append(launchDiv);
 $(".theLaunch").prepend(launchDiv);
-<<<<<<< HEAD
-var 
 
-
-}
+};
 
 var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
 console.log(currentDate);
 
 var arrivalDate = moment().add(130, 'days')
 console.log(arrivalDate);
-
-
-=======
-
-};
-
-// var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
-// console.log(currentDate);
-
-// var arrivalDate = moment().add(130, 'days')
-// console.log(arrivalDate);
->>>>>>> 6e7ea1ad778e4ab7288620a9b2bfcdcbc0854775
 
 
 
