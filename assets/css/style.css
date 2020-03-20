@@ -1,14 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("../images/background.jpg");
 }
-.planets {
-  flex-wrap: wrap;
-  display: flex;
-  justify-content: space-around;
+
+.rockets {
+  width: 150px;
+  height: 150px;
 }
-.planet {
-  width: 80px;
-  height: 100%;
+
+.rocket{
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+.col-sm-4 .planet {
+  text-align: center;
+  width: 90%;
+  height: 150px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  
+}
+
+.col-sm-4 {
+  padding: 0;
 }
 
 .items {
