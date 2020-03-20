@@ -166,13 +166,15 @@ $(".planet-container").on("click", function() {
   firstAPI();
   secondAPI();
   
-  var startOverDiv = $("<h4>");
+  var startOverDiv = $("<a class = 'newBtns'>");
     startOverDiv.text("Start Over?");
+    startOverDiv.attr("href", "index.html");
     $(".newTrip").append(startOverDiv);
   
   if (rocketPicked === true) {
-    var readyDiv = $("<h4>");
+    var readyDiv = $("<a class = 'newBtns'>");
     readyDiv.text("LAUNCH");
+    readyDiv.attr("href", "launch.html")
     $(".ready").append(readyDiv);
   }
 });
@@ -185,8 +187,9 @@ $(document).on("click", ".theRockets", function() {
   $(".rocketChoice").append(rocketChoiceDiv);
 
   if (planetPicked === true) {
-    var readyDiv = $("<h4>");
+    var readyDiv = $("<a class = 'newBtns'>");
     readyDiv.text("LAUNCH");
+    readyDiv.attr("href", "launch.html")
     $(".ready").append(readyDiv);
   }
 });
