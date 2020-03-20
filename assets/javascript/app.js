@@ -145,18 +145,29 @@ var userPlanet = "";
 var planetImg = [];
 
 function clearStorage() {
-  localStorage.removeItem("plantImg");
+  localStorage.removeItem("planetImg");
   
 }
 
-$(".planet").on("click", function() {
+$(".planet-container").on("click", function() {
   userPlanet = $(this).attr("data");
+  // console.log(userPlanet);
+  // console.log(this);
   localStorage.setItem("userPlanet", userPlanet);
   var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
-  
+  var planetChoiceDiv = $("<div>");
+  planetChoiceDiv.prepend(this);
+  $(".userChoice").append(planetChoiceDiv);
+
   firstAPI();
   secondAPI();
 });
+
+$(document).on("click", ".rockets", function() {
+  var rocketChoiceDiv = $("<div>");
+  rocketChoiceDiv.prepend(this);
+  $(".rocketChoice").append(rocketChoiceDiv);
+})
 
 function firstAPI() {
   var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
@@ -305,8 +316,28 @@ function imgPush() {
 
     $(".bringItems").append(toBring);
 
-
 }
+
+function launchInfo () {
+  destinationPlanet = localStorage.getItem("userPlanet");
+  var launchDiv = $("<div class = 'launch'>")
+  var planetDistance = $("<p class = 'facts'>");
+    planetDistance.prepend("Distance to  "+ planets[destinationPlanet].name + " is "+ planets[destinationPlanet].distance+"."); 
+    launchDiv.prepend(planetDistance);
+    //var launchDiv = $("<div class = 'launch'>");
+    var travelTime = $("<p class = 'facts'>");
+    travelTime.append("It will take you "+  " " + planets[destinationPlanet].travelTime + " to reach " + destinationPlanet);
+    launchDiv.append(travelTime);
+$(".theLaunch").append(launchDiv);
+$(".theLaunch").prepend(launchDiv);
+
+};
+
+// var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
+// console.log(currentDate);
+
+// var arrivalDate = moment().add(130, 'days')
+// console.log(arrivalDate);
 
 
 

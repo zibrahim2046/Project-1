@@ -11,19 +11,20 @@ body {
   height: 150px;
 }
 
-.rocket{
+.theRockets {
   display: inline-block;
   overflow: hidden;
 }
 
 
 .col-sm-4 .planet {
-  text-align: center;
   width: 90%;
   height: 150px;
   margin-left: 5px;
-  margin-bottom: 5px;
-  
+}
+
+h5 {
+  text-align: center;
 }
 
 .col-sm-4 {
@@ -49,4 +50,18 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   cursor: pointer;
+}
+
+.choices {
+  margin-top: 5px;
+}
+
+.userChoice img {
+  width: 90%;
+  height: 90%;
+}
+
+.rocketChoice img {
+  width: 90%;
+  height: 90%;
 }

@@ -7,13 +7,14 @@
   </title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="We need a description for NLSV" />
-  <meta name="robots" content="=index, follow" />
-  <!-- <link rel="icon" href="/Astronaut_icon-icons.com_54211.ico" /> -->
+  <!-- <meta name="description" content="We need a description for NLSV" />
+  <meta name="robots" content="=index, follow" /> -->
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <!-- Custom CSS -->
   <link href="assets/css/style.css" rel="stylesheet" />
+  <!-- jQuery call -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
@@ -30,19 +31,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            Rockets
-          </div>
-          <div class="card-body">
-            <img class = "rockets" src="assets/images/newglenn.jpg" alt = "school" data = "newGlenn">
-            <img class = "rockets" src="assets/images/Spaceballs.jpg" alt = "school" data = "spaceballs">
-            <img class = "rockets" src="assets/images/starship.jpg" alt = "school" data = "starship">
-          </div>
-        </div>
-      </div>
-
+      
       <div class="col-md-6">
         <div class="card planets-container">
           <div class="card-header">
@@ -51,75 +40,101 @@
           <div class="card-body planets container">
             <div class = "row">
               <div class = "col-sm-4">
-                <div class="planet-container">
+                <div class="planet-container" data = "mercury">
                   <img class="planet" src="assets/images/mercury.jpg" alt="Mercury" data="mercury" />
+                  <h5>Mercury</h5>
                 </div>
               </div>
               <div class = "col-sm-4">
-                <div class="planet-container">
+                <div class="planet-container" data = "venus">
                   <img class="planet" src="assets/images/venus.jpg" alt="Venus" data="venus" />
+                  <h5>Venus</h5>
                 </div>
               </div>
               <div class = "col-sm-4">
-                <div class="planet-container">
+                <div class="planet-container" data = "mars">
                   <img class="planet" src="assets/images/mars.jpg" alt="Mars" data="mars" />
+                  <h5>Mars</h5>
                 </div>
               </div>
             </div>
             <div class = "row">
               <div class = "col-sm-4">
-                <div class="planet-container">
+                <div class="planet-container" data = "jupiter">
                   <img class="planet" src="assets/images/jupiter.jpg" alt="Jupiter" data="jupiter" />
+                  <h5>Jupiter</h5>
                 </div>
               </div>
               <div class = "col-sm-4">
-                <div class="planet-container">
+                <div class="planet-container" data = "saturn">
                   <img class="planet" src="assets/images/saturn.jpg" alt="Saturn" data="saturn" />
+                  <h5>Saturn</h5>
                 </div>
                 </div>
               <div class = "col-sm-4">    
-                <div class="planet-container">
+                <div class="planet-container" data = "uranus">
                   <img class="planet" src="assets/images/uranus.jpg" alt="Uranus" data="uranus"/>
+                  <h5>Uranus</h5>
                 </div>
               </div>
             </div>
             <div class = "row">
               <div class = "col-sm-4">
-                <div class="planet-container">
+                <div class="planet-container" data = "neptune">
                   <img class="planet" src="assets/images/neptune.jpg" alt="Neptune" data="neptune" />
+                  <h5>Neptune</h5>
                 </div>
               </div>
               <div class = "col-sm-4">    
-                <div class="planet-container">
+                <div class="planet-container" data = "pluto">
                   <img class="planet" src="assets/images/pluto.jpg" alt="pluto" data="pluto" />
+                  <h5>Pluto</h5>
                 </div>
               </div>
             </div>     
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
       <div class="col-md-6">
-        <div class="card date">
+        <div class="card">
           <div class="card-header">
-            Date
+            Rockets
           </div>
           <div class="card-body">
-            <form></form>
+            <div class = "theRockets">
+              <img class = "rockets" src="assets/images/newglenn.jpg" alt = "school" data = "newGlenn">
+            </div>
+            <div class = "theRockets">
+              <img class = "rockets" src="assets/images/Spaceballs.jpg" alt = "school" data = "spaceballs">
+            </div>
+            <div class = "theRockets">
+              <img class = "rockets" src="assets/images/starship.jpg" alt = "school" data = "starship">
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+        <div class = "row">
+          <div class="col-md-12">
+            <div class="card choices">
+              <div class="card-header">
+                Your Choices
+              </div>
+              <div class = "card-body">
+                <div class = "row">
+                  <div class = "col-sm-6">
+                    <div class="userChoice"></div>
+                  </div>
+                  <div class = "col-sm-6">
+                    <div class="rocketChoice"></div>
+                  </div>
+                </div>
+              </div>  
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card choices">
-          <div class="card-header">
-            Your Choices
-          </div>
-          <div class="card-body"></div>
-        </div>
-      </div>
     </div>
   </div>
   <script src="assets/javascript/app.js"></script>
