@@ -143,6 +143,8 @@ var planets = {
 
 var userPlanet = "";
 var planetImg = [];
+var planetPicked = false;
+var rocketPicked = false;
 
 function clearStorage() {
   localStorage.removeItem("planetImg");
@@ -150,7 +152,9 @@ function clearStorage() {
 }
 
 $(".planet-container").on("click", function() {
+  $(".userChoice").empty();
   userPlanet = $(this).attr("data");
+  planetPicked = true;
   // console.log(userPlanet);
   // console.log(this);
   localStorage.setItem("userPlanet", userPlanet);
@@ -161,13 +165,33 @@ $(".planet-container").on("click", function() {
 
   firstAPI();
   secondAPI();
+  
+  var startOverDiv = $("<h4>");
+    startOverDiv.text("Start Over?");
+    $(".newTrip").append(startOverDiv);
+  
+  if (rocketPicked === true) {
+    var readyDiv = $("<h4>");
+    readyDiv.text("LAUNCH");
+    $(".ready").append(readyDiv);
+  }
 });
 
-$(document).on("click", ".rockets", function() {
+$(document).on("click", ".theRockets", function() {
+  $(".rocketChoice").empty();
+  rocketPicked = true;
   var rocketChoiceDiv = $("<div>");
   rocketChoiceDiv.prepend(this);
   $(".rocketChoice").append(rocketChoiceDiv);
-})
+
+  if (planetPicked === true) {
+    var readyDiv = $("<h4>");
+    readyDiv.text("LAUNCH");
+    $(".ready").append(readyDiv);
+  }
+});
+
+
 
 function firstAPI() {
   var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
