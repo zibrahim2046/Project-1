@@ -9,7 +9,8 @@ var planets = {
     size: "7 times less surface area than Earth",
     type: "Rocky, Terrestrial",
     distance: "78 million miles",
-    travelTime: "130 days"
+    travelTime: "130 days",
+    name: "Mercury",
   },
   venus: {
     surfaceTempMin: "870",
@@ -21,7 +22,9 @@ var planets = {
     size: "10% less surface area than Earth",
     type: "Rocky, Terrestrial",
     distance: "69 million miles",
-    travelTime: "115 days"
+    travelTime: "115 days",
+    name: "Venus"
+
   },
   earth: {
     surfaceTempMin: "-129",
@@ -44,7 +47,8 @@ var planets = {
     size: "Just over 1/2 the surface area of Earth",
     type: "Rocky, Terrestrial",
     distance: "145 million miles",
-    travelTime: "241 days"
+    travelTime: "241 days",
+    name: "Mars"
   },
   jupiter: {
     surfaceTempMin: "(Atmosphere) -229",
@@ -56,7 +60,8 @@ var planets = {
     size: "122 times more surface area than Earth",
     type: "Gas Giant",
     distance: "512 million miles",
-    travelTime: "853 days"
+    travelTime: "853 days",
+    name: "Jupiter"
   },
   saturn: {
     surfaceTempMin: "(Atmosphere) -288",
@@ -68,7 +73,8 @@ var planets = {
     size: "83 times more surface area than Earth",
     type: "Gas Giant",
     distance: "973 million miles",
-    travelTime: "1621 days"
+    travelTime: "1621 days",
+    name: "Saturn"
   },
   uranus: {
     surfaceTempMin: "(Atmosphere) -371",
@@ -78,7 +84,8 @@ var planets = {
     size: "16 times more surface area than Earth",
     type: "Ice Giant",
     distance: "1.9 billion miles",
-    travelTime: "3166 days"
+    travelTime: "3166 days",
+    name: "Uranus"
   },
   neptune: {
     surfaceTempMin: "(Atmosphere) -360",
@@ -90,7 +97,8 @@ var planets = {
     size: "15 times more surface area than Earth",
     type: "Ice Giant",
     distance: "2.8 billion miles",
-    travelTime: "4666 days"
+    travelTime: "4666 days",
+    name: "Neptune"
   },
   pluto: {
     surfaceTempMin: "-400",
@@ -102,7 +110,8 @@ var planets = {
     size: "30 times less surface area than Earth",
     type: "Dwarf",
     distance: "3.2 billion miles",
-    travelTime: "5333 days"
+    travelTime: "5333 days",
+    name: "Pluto"
   }
 };
 
@@ -216,18 +225,24 @@ function launchInfo () {
   destinationPlanet = localStorage.getItem("userPlanet");
   var launchDiv = $("<div class = 'launch'>")
   var planetDistance = $("<p class = 'facts'>");
-    planetDistance.prepend("Distance to  "+ destinationPlanet + " "+ planets[destinationPlanet].distance); 
+    planetDistance.prepend("Distance to  "+ planets[destinationPlanet].name + " is "+ planets[destinationPlanet].distance+"."); 
     launchDiv.prepend(planetDistance);
     //var launchDiv = $("<div class = 'launch'>");
     var travelTime = $("<p class = 'facts'>");
     travelTime.append("It will take you "+  " " + planets[destinationPlanet].travelTime + " to reach " + destinationPlanet);
     launchDiv.append(travelTime);
-$(".theLaunch").append(launchDiv)
-$(".theLaunch").prepend(launchDiv)
+$(".theLaunch").append(launchDiv);
+$(".theLaunch").prepend(launchDiv);
+
 
 
 }
-console.log(avgRocketSpeed);
+
+
+
+
+
+
 
 
 
