@@ -218,7 +218,14 @@ function launchInfo () {
   var planetDistance = $("<p class = 'facts'>");
     planetDistance.prepend("Distance to  "+ destinationPlanet + " "+ planets[destinationPlanet].distance); 
     launchDiv.prepend(planetDistance);
+    //var launchDiv = $("<div class = 'launch'>");
+    var travelTime = $("<p class = 'facts'>");
+    travelTime.append("It will take you "+  " " + planets[destinationPlanet].travelTime + " to reach " + destinationPlanet);
+    launchDiv.append(travelTime);
+$(".theLaunch").append(launchDiv)
 $(".theLaunch").prepend(launchDiv)
+
+
 }
 console.log(avgRocketSpeed);
 
