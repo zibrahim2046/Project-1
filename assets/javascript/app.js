@@ -233,12 +233,16 @@ function launchInfo () {
     launchDiv.append(travelTime);
 $(".theLaunch").append(launchDiv);
 $(".theLaunch").prepend(launchDiv);
-
+var 
 
 
 }
 
+var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
+console.log(currentDate);
 
+var arrivalDate = moment().add(130, 'days')
+console.log(arrivalDate);
 
 
 
