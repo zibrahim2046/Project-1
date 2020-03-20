@@ -1,40 +1,5 @@
-<<<<<<< HEAD
-body @import "susy";
-@import "compass/reset";
-
-.stars, .twinkling, .clouds {
-	position:absolute;
-	display:block;
-	top:0; bottom:0;
-	left:0; right:0;
-	width:100%; height:100%;
-}
-
-.stars {
-	z-index: 0;
-	background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
-}
-
-.twinkling{
-	z-index: 1;
-	background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
-	animation: move-twink-back 200s linear infinite;
-}
-
-.clouds{
-	z-index: 2;
-    background:transparent url('https://image.ibb.co/bT4N7T/clouds.png') repeat top center;
-	animation: move-clouds-back 200s linear infinite;
-}
-
-@keyframes move-twink-back {
-	from {background-position:0 0;}
-	to {background-position:-10000px 5000px;}
-}
-
-@keyframes move-clouds-back {
-	from {background-position:0 0;}
-	to {background-position:10000px 0;}
+body {
+  background-image: url("../images/background.jpg");
 }
 
 .jumbotron {
@@ -67,57 +32,136 @@ button {
 .choices {
   background-color: #949290;
 }
-=======
 body {
-    background-image: url("../images/background.jpg");
+  background-image: url("../images/background.jpg");
 }
 button {
-    background-color: skyblue;
-    font-family: Oxanium;
-    font-weight: bolder;
-
-    
+  background-color: skyblue;
+  font-family: Oxanium;
+  font-weight: bolder;
 }
-button:hover{
-    background-color:#cc5500;
+button:hover {
+  background-color: #cc5500;
 }
-div{
- background-color: whitesmoke
+div {
+  background-color: whitesmoke;
 }
 
-h1, h2, h3{
-    font-family: 'chango', cursive;
-    font-style: normal;
-    font-size: larger;
-    color: black;
-    }
-
-.rockets{
-    font-family: Oxanium;
-    font-size: larger;
-    font-weight: bold;
-    background-color:skyblue;
-}
-.planets{
-    background-color:skyblue;
-    font-family:Oxanium;
-    font-size: larger;
-    font-weight: bold;
-}
-.date{
-background-color:skyblue;
-font-family: Oxanium;
-font-size: larger;
-font-weight: bold;
-}
-.choices{
-background-color: skyblue;
-font-family: Oxanium;
-font-size: larger;
-font-weight: bold;
+h1,
+h2,
+h3 {
+  font-family: "chango", cursive;
+  font-style: normal;
+  font-size: larger;
+  color: black;
 }
 
-.jumbotron{
-    background-image: url("../images/background.jpg");
+.rockets {
+  font-family: Oxanium;
+  font-size: larger;
+  font-weight: bold;
+  background-color: skyblue;
 }
->>>>>>> d4dbabba26c1dcdd6c9c010cfe8ec8910892e413
+.planets {
+  background-color: skyblue;
+  font-family: Oxanium;
+  font-size: larger;
+  font-weight: bold;
+}
+.date {
+  background-color: skyblue;
+  font-family: Oxanium;
+  font-size: larger;
+  font-weight: bold;
+}
+.choices {
+  background-color: skyblue;
+  font-family: Oxanium;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.jumbotron {
+  background-image: url("../images/background.jpg");
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+}
+
+.rockets {
+  width: 150px;
+  height: 150px;
+}
+
+.theRockets {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.col-sm-4 .planet {
+  width: 90%;
+  height: 150px;
+  margin-left: 5px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.col-sm-4 {
+  padding: 0;
+}
+
+.items {
+  margin-top: 5px;
+}
+
+.pic {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5px;
+}
+
+.returnHome {
+  background: #7a3838;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+.choices {
+  margin-top: 5px;
+}
+
+.userChoice img {
+  width: 90%;
+  height: 90%;
+}
+
+.rocketChoice img {
+  width: 90%;
+  height: 200px;
+}
+
+.ready,
+.newTrip {
+  text-align: center;
+  margin: 10px;
+  /* background: #7a3838; */
+  border-radius: 20px;
+  background: #295b5c;
+  /* text-decoration: none;
+  color: #ffffff; */
+  font-size: 24px;
+}
+
+div a {
+  text-decoration: none;
+  color: #ffffff;
+}
