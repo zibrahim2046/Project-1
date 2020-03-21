@@ -153,6 +153,8 @@ function clearStorage() {
 
 $(".planet-container").on("click", function() {
   $(".userChoice").empty();
+  $(".newTrip").empty();
+  $(".ready").empty();
   userPlanet = $(this).attr("data");
   planetPicked = true;
   // console.log(userPlanet);
@@ -181,6 +183,7 @@ $(".planet-container").on("click", function() {
 
 $(document).on("click", ".theRockets", function() {
   $(".rocketChoice").empty();
+  $(".ready").empty();
   rocketPicked = true;
   var rocketChoiceDiv = $("<div>");
   rocketChoiceDiv.prepend(this);
@@ -246,9 +249,22 @@ function imgPush() {
   planetImg = JSON.parse(localStorage.getItem("planetImg"));
   userPlanetStored = localStorage.getItem("userPlanet");
   
-  var jTron = $("<h1 class = 'display-4'>")
-  jTron.text(planets[userPlanetStored].name);
-  $(".for-jtron").append(jTron);
+  // var jTron = $("<h1 class = 'display-4'>")
+  // jTron.text(planets[userPlanetStored].name);
+  // $(".for-jtron").append(jTron);
+
+  // var jTron = $("<h1 class = 'ml1'>");
+  // var jTronA = $("<span class = 'line line1>");
+  // jTron.append(jTronA);
+  // var jTronB = $("<span class = 'letters'>")
+  // jTronB.text(planets[userPlanetStored].name);
+  // jTron.append(jTronB);
+  // var jTronC = $("<span class = 'line line2'>");
+  // jTron.append(jTronC);
+
+  // $(".for-jtron").append(jTron);
+  $(".letters").text(planets[userPlanetStored].name);
+
 
   for (var j = 0; j < 4; j++) {
     
@@ -347,25 +363,75 @@ function imgPush() {
 
 function launchInfo () {
   destinationPlanet = localStorage.getItem("userPlanet");
-  var launchDiv = $("<div class = 'launch'>")
+  var launchDiv = $("<div class = 'launch'>");
   var planetDistance = $("<p class = 'facts'>");
-    planetDistance.prepend("Distance to  "+ planets[destinationPlanet].name + " is "+ planets[destinationPlanet].distance+"."); 
-    launchDiv.prepend(planetDistance);
-    //var launchDiv = $("<div class = 'launch'>");
-    var travelTime = $("<p class = 'facts'>");
-    travelTime.append("It will take you "+  " " + planets[destinationPlanet].travelTime + " to reach " + destinationPlanet);
-    launchDiv.append(travelTime);
-$(".theLaunch").append(launchDiv);
-$(".theLaunch").prepend(launchDiv);
+  planetDistance.prepend(
+    "-Greetings brave traveler! Today you are embarking on a perilous journey to  " +
+      planets[destinationPlanet].name +
+      "." +
+      " The distance to " +
+      planets[destinationPlanet].name +
+      " is " +
+      planets[destinationPlanet].distance +
+      "."
+      // + " and given your average travel velocity of 25,000 mph..."
+  );
+  launchDiv.prepend(planetDistance);
+  //var launchDiv = $("<div class = 'launch'>");
+  var travelTime = $("<p class = 'facts'>");
+  travelTime.append(
+    "-Given your average velocity of 25,000 mph, it will take you " +
+      " " +
+      planets[destinationPlanet].travelTime +
+      " to reach " +
+      planets[destinationPlanet].name + "."
+  );
+  launchDiv.append(travelTime);
+  $(".theLaunch").append(launchDiv);
+
+  var daysOfTravel = parseInt(planets[destinationPlanet].travelTime);
+  var arrivalDate = moment().add(daysOfTravel, "days");
+  var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
+  
+
+  var arriveDate = $("<p class = 'facts'>");
+  arriveDate.append(
+    "-Assuming all goes well during your adventure, and you don't collide with any asteroids or debris, you will arrive on " + finalDate + "!")
+    launchDiv.append(arriveDate);
+    $(".theLaunch").append(launchDiv);
+
 
 };
 
-// var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
-// console.log(currentDate);
 
-// var arrivalDate = moment().add(130, 'days')
-// console.log(arrivalDate);
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
 
 
 
