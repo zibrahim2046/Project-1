@@ -5,6 +5,7 @@
 body {
   background-image: url("../images/vector.jpg");
 }
+/* Anime.js */
 .ml1 {
   font-weight: 900;
   font-size: 3.5em;
@@ -41,11 +42,13 @@ body {
   bottom: 0;
 }
 
+/* end Anime.js */
+
 .rockets {
   width: 150px;
   height: 150px;
   font-family: "Oxanium", cursive;
-  background-color: #295b5c;
+  background-color: #c4b2b9;
 }
 
 .theRockets {
@@ -83,7 +86,7 @@ h5 {
 }
 
 .returnHome {
-  background: #295b5c;
+  background: #c4b2b9;
   color: #ffffff;
   text-align: center;
   margin-top: 30px;
@@ -116,15 +119,15 @@ h5 {
 .newTrip {
   text-align: center;
   margin: 10px;
-  /* background: #7a3838; */
+  /* background: #c4b2b9; */
   border-radius: 20px;
-  background: #295b5c;
+  background: #c4b2b9;
   font-size: 24px;
   font-family: "Oxanium", cursive;
 }
 .card-header {
   font-family: "Oxanium", cursive;
-  background-color: #295b5c;
+  background-color: #c4b2b9;
   color: white;
   font-weight: bold;
   font-size: larger;
@@ -134,5 +137,10 @@ div a {
   color: #ffffff;
 }
 .jumbotron {
-  background-color: silver;
+  background-image: url("../images/vector.jpg");
+  color: #c4b2b9;
+}
+
+.jumbotron {
+  text-align: center;
 }
