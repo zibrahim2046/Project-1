@@ -13,6 +13,7 @@ body {
  
 }
 
+
 .ml1 .letter {
   display: inline-block;
   line-height: 1em;
@@ -140,4 +141,40 @@ div a {
   background-color: silver; 
   opacity: 50%;
   text-align: center;
+}
+
+.launchInfo {
+  background: #7a3838;
+  color: #ffffff;
+  margin: auto;
+  width: 79%;
+  
+}
+
+.gif {
+  width: 33%;
+  height: 50%;
+  align-items: center;
+}
+
+.gifs {
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.videoContainer {
+  align-items: center;
+}
+
+.launchvideo {
+  margin: auto;
+}
+
+iframe {
+  margin: 0 auto;
+  display: block;
+  align-content: center;
+  width: 79%;
+  height: 500px;
 }

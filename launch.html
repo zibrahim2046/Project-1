@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,47 +9,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <meta name="description" content="We need a description for NLSV" />
     <meta name="robots" content="=index, follow" /> -->
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- jQuery call -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Link to Moment.js -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!--anime.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <!--google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Chango|Oxanium&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
   </head>
-
+  
   <body onload="launchInfo()">
-    <div class="container">
-        <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/7ccCJvZr2l4?controls=0"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="card p-launchVideo">
-            <div class="card-header">
-              Gifs
-            </div>
-            <div class="card-body">
-              <div class="gifs">
-                <img src="https://media.giphy.com/media/kjjRGpezebjaw/giphy.gif">
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+           <h1 class="ml1">
+          <span class="text-wrapper">
+            <span class="line line1"></span>
+            <span class="letters">READY...SET...LAUNCH</span>
+            <span class="line line2"></span>
+          </span>
+        </h1>
+      </div>
+    </div>
 
-        <div class="col-md-9">
+    <div class="videoContainer">
+       <div><iframe
+        src="https://www.youtube.com/embed/7ccCJvZr2l4?rel=0&controls=0&autoplay=1&mute=1&modestbranding=1&autohide=1&showinfo=0&deletecontrols=0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+            >
+      </iframe></div>
+    </div>
+           
+      <div class="row">
+        <div class="col-md-12">
           <div class="card launchInfo">
             <div class="card-header">
-              THE LAUNCH
+              Travel Info
             </div>
             <div class="card-body">
               <div class="theLaunch"></div>
@@ -56,20 +59,37 @@
           </div>
         </div>
       </div>
+    
 
-      <div class = "row">
-        <div class = "col-sm-6">
-          <div class = "ready">
-            <a href = "planets.html">Planet Information</a>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card launchInfo">
+            
+            <div class="card-body">
+              <div class="gifs">
+                <img class="gif" src="https://media.giphy.com/media/SQgbkziuGrNxS/giphy.gif"> 
+                <img class="gif" src="https://media.giphy.com/media/9PyhoXey73EpW/giphy.gif">
+                <img class="gif" src="https://media.giphy.com/media/YHvwPgwojjsFa/giphy.gif">
+              </div>
+            </div>
+
+            <div class = "row">
+              <div class = "col-sm-6">
+                <div class = "ready">
+                  <a href = "planets.html">Planet Information</a>
+                </div>
+              </div>
+              <div class = "col-sm-6">
+                <div class = "newTrip">
+                  <a href = "index.html">New Trip?</a>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
-        <div class = "col-sm-6">
-          <div class = "newTrip">
-            <a href = "index.html">New Trip?</a>
-          </div>
-        </div>
+    </div>
       </div>
-
     </div>
 
     <!-- Javascript link -->

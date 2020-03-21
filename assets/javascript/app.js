@@ -249,9 +249,22 @@ function imgPush() {
   planetImg = JSON.parse(localStorage.getItem("planetImg"));
   userPlanetStored = localStorage.getItem("userPlanet");
   
-  var jTron = $("<h1 class = 'display-4'>")
-  jTron.text(planets[userPlanetStored].name);
-  $(".for-jtron").append(jTron);
+  // var jTron = $("<h1 class = 'display-4'>")
+  // jTron.text(planets[userPlanetStored].name);
+  // $(".for-jtron").append(jTron);
+
+  // var jTron = $("<h1 class = 'ml1'>");
+  // var jTronA = $("<span class = 'line line1>");
+  // jTron.append(jTronA);
+  // var jTronB = $("<span class = 'letters'>")
+  // jTronB.text(planets[userPlanetStored].name);
+  // jTron.append(jTronB);
+  // var jTronC = $("<span class = 'line line2'>");
+  // jTron.append(jTronC);
+
+  // $(".for-jtron").append(jTron);
+  $(".letters").text(planets[userPlanetStored].name);
+
 
   for (var j = 0; j < 4; j++) {
     
@@ -350,21 +363,42 @@ function imgPush() {
 
 function launchInfo () {
   destinationPlanet = localStorage.getItem("userPlanet");
-  var launchDiv = $("<div class = 'launch'>")
+  var launchDiv = $("<div class = 'launch'>");
   var planetDistance = $("<p class = 'facts'>");
-    planetDistance.prepend("Distance to  "+ planets[destinationPlanet].name + " is "+ planets[destinationPlanet].distance+"."); 
-    launchDiv.prepend(planetDistance);
-    //var launchDiv = $("<div class = 'launch'>");
-    var travelTime = $("<p class = 'facts'>");
-    travelTime.append("It will take you "+  " " + planets[destinationPlanet].travelTime + " to reach " + destinationPlanet);
-    launchDiv.append(travelTime);
+  planetDistance.prepend(
+    "-Greetings brave traveler! Today you are embarking on a perilous journey to  " +
+      planets[destinationPlanet].name +
+      "." +
+      " The distance to " +
+      planets[destinationPlanet].name +
+      " is " +
+      planets[destinationPlanet].distance +
+      "."
+      // + " and given your average travel velocity of 25,000 mph..."
+  );
+  launchDiv.prepend(planetDistance);
+  //var launchDiv = $("<div class = 'launch'>");
+  var travelTime = $("<p class = 'facts'>");
+  travelTime.append(
+    "-Given your average velocity of 25,000 mph, it will take you " +
+      " " +
+      planets[destinationPlanet].travelTime +
+      " to reach " +
+      planets[destinationPlanet].name + "."
+  );
+  launchDiv.append(travelTime);
   $(".theLaunch").append(launchDiv);
-  $(".theLaunch").prepend(launchDiv);
 
-var daysOfTravel = parseInt(planets[destinationPlanet].travelTime);
-var arrivalDate = moment().add(daysOfTravel, "days");
-var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
-// console.log(finalDate);
+  var daysOfTravel = parseInt(planets[destinationPlanet].travelTime);
+  var arrivalDate = moment().add(daysOfTravel, "days");
+  var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
+  
+
+  var arriveDate = $("<p class = 'facts'>");
+  arriveDate.append(
+    "-Assuming all goes well during your adventure, and you don't collide with any asteroids or debris, you will arrive on " + finalDate + "!")
+    launchDiv.append(arriveDate);
+    $(".theLaunch").append(launchDiv);
 
 
 };
