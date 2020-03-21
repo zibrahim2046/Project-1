@@ -363,7 +363,7 @@ function launchInfo() {
       " " +
       planets[destinationPlanet].travelTime +
       " to reach " +
-      destinationPlanet
+      destinationPlanet + "."
   );
   launchDiv.append(travelTime);
   $(".theLaunch").append(launchDiv);
