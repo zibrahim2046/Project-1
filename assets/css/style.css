@@ -1,113 +1,71 @@
-body {
-  background-image: url("../images/background.jpg");
-}
-
-.jumbotron {
-  background-image: url(https://www.imcdb.org/i014240.jpg);
-  background-size: cover;
-  height: 100%;
-}
-
-h1 {
-  font-family: "Oxanium";
-  src: url(https://fonts.google.com/specimen/Oxanium?selection.family=Oxanium);
-  font-weight: normal;
-  font-style: normal;
-}
-
-button {
-  background-color: #492f2f;
-}
-
-.rockets {
-  background-color: #949290;
-}
-.date {
-  background-color: #949290;
-}
-
-.planets {
-  background-color: #949290;
-}
-.choices {
-  background-color: #949290;
-}
-body {
-  background-image: url("../images/background.jpg");
-}
-button {
-  background-color: skyblue;
-  font-family: Oxanium;
-  font-weight: bolder;
-}
-button:hover {
-  background-color: #cc5500;
-}
-div {
-  background-color: whitesmoke;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "chango", cursive;
-  font-style: normal;
-  font-size: larger;
-  color: black;
-}
-
-.rockets {
-  font-family: Oxanium;
-  font-size: larger;
-  font-weight: bold;
-  background-color: skyblue;
-}
-.planets {
-  background-color: skyblue;
-  font-family: Oxanium;
-  font-size: larger;
-  font-weight: bold;
-}
-.date {
-  background-color: skyblue;
-  font-family: Oxanium;
-  font-size: larger;
-  font-weight: bold;
-}
-.choices {
-  background-color: skyblue;
-  font-family: Oxanium;
-  font-size: larger;
-  font-weight: bold;
-}
-
-.jumbotron {
-  background-image: url("../images/background.jpg");
+* {
   box-sizing: border-box;
 }
 
 body {
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/vector.jpg");
+}
+.ml1 {
+  font-weight: 900;
+  font-size: 3.5em;
+  font-family: "chango";
+}
+
+.ml1 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml1 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+
+.ml1 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transform-origin: 0 0;
+}
+
+.ml1 .line1 {
+  top: 0;
+}
+.ml1 .line2 {
+  bottom: 0;
 }
 
 .rockets {
   width: 150px;
   height: 150px;
+  font-family: "Oxanium", cursive;
+  background-color: #295b5c;
 }
 
 .theRockets {
   display: inline-block;
   overflow: hidden;
+  font-family: "Oxanium", cursive;
+  font-weight: bolder;
 }
 
 .col-sm-4 .planet {
   width: 90%;
   height: 150px;
   margin-left: 5px;
+  font-family: "Oxanium", cursive;
+  font-weight: bolder;
 }
 
 h5 {
   text-align: center;
+  font-family: "Oxanium", cursive;
 }
 
 .col-sm-4 {
@@ -133,20 +91,25 @@ h5 {
   padding-top: 20px;
   padding-bottom: 20px;
   cursor: pointer;
+  font-family: "Oxanium", cursive;
 }
 
 .choices {
   margin-top: 5px;
+  font-family: "Oxanium", cursive;
 }
 
 .userChoice img {
   width: 90%;
   height: 90%;
+  font-family: "Oxanium", cursive;
 }
 
 .rocketChoice img {
   width: 90%;
   height: 200px;
+  font-family: "Oxanium", cursive;
+  font-weight: bolder;
 }
 
 .ready,
@@ -157,9 +120,19 @@ h5 {
   border-radius: 20px;
   background: #295b5c;
   font-size: 24px;
+  font-family: "Oxanium", cursive;
 }
-
+.card-header {
+  font-family: "Oxanium", cursive;
+  background-color: #295b5c;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+}
 div a {
   text-decoration: none;
   color: #ffffff;
+}
+.jumbotron {
+  background-color: silver;
 }
