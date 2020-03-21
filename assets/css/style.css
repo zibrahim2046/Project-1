@@ -46,7 +46,8 @@ body {
   width: 150px;
   height: 150px;
   font-family: 'Oxanium', cursive;
-  background-color: #295B5C;
+  /* background-color: #295B5C; */
+  background-color: #c4b2b9
 }
 
 .theRockets {
@@ -86,7 +87,7 @@ h5 {
 }
 
 .returnHome {
-  background: #295b5c;
+  background: #c4b2b9;
   color: #ffffff;
   text-align: center;
   margin-top: 30px;
@@ -121,14 +122,14 @@ h5 {
   margin: 10px;
   /* background: #7a3838; */
   border-radius: 20px;
-  background: #295b5c;
+  background: #c4b2b9;
   font-size: 24px;
   font-family: 'Oxanium', cursive;
   
 }
 .card-header {
   font-family: 'Oxanium', cursive;
-  background-color:#295B5C;
+  background-color:#c4b2b9;
   color: white;
   font-weight: bold;
   font-size: larger;
@@ -138,14 +139,14 @@ div a {
   color: #ffffff;
 }
 .jumbotron {
-  background-color: silver; 
+  background-color: #c4b2b9; 
   opacity: 50%;
   text-align: center;
 }
 
 .launchInfo {
-  background: #7a3838;
-  color: #ffffff;
+  /* background: #c4b2b9; */
+  /* color: #ffffff; */
   margin: auto;
   width: 79%;
   
