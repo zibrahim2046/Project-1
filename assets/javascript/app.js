@@ -12,7 +12,8 @@ var planets = {
     travelTime: "130 days",
     name: "Mercury",
     clothesDay: "Shorts and a tanktop, but mainly a spacesuit during the day",
-    clothesNight: "Biggest snowsuit you can find, but mainly a spacesuit at night",
+    clothesNight:
+      "Biggest snowsuit you can find, but mainly a spacesuit at night",
     sunscreen: "SPF 10,000 Sunscreen"
   },
   venus: {
@@ -39,8 +40,7 @@ var planets = {
     daysPerYear: "365 Earth days",
     link: "https://nineplanets.org/earth/",
     size: "",
-    type: "Rocky, Terrestrial",
-    
+    type: "Rocky, Terrestrial"
   },
   mars: {
     surfaceTempMin: "-195",
@@ -54,10 +54,11 @@ var planets = {
     distance: "145 million miles",
     travelTime: "241 days",
     name: "Mars",
-    clothesDay: "Jeans and a funny tshirt, but mainly a spacesuit during the day",
-    clothesNight: "Biggest snowsuit you can find, but mainly a spacesuit at night",
+    clothesDay:
+      "Jeans and a funny tshirt, but mainly a spacesuit during the day",
+    clothesNight:
+      "Biggest snowsuit you can find, but mainly a spacesuit at night",
     sunscreen: "SPF 50 Sunscreen"
-    
   },
   jupiter: {
     surfaceTempMin: "(Atmosphere) -229",
@@ -101,7 +102,8 @@ var planets = {
     distance: "1.9 billion miles",
     travelTime: "3166 days",
     name: "Uranus",
-    clothesDay: "You'd think ice skates with it being an ice giant but stay in your spacesuit",
+    clothesDay:
+      "You'd think ice skates with it being an ice giant but stay in your spacesuit",
     clothesNight: "See above and don't even think about going near the core",
     sunscreen: "You won't even remember the sun exists"
   },
@@ -133,7 +135,8 @@ var planets = {
     distance: "3.2 billion miles",
     travelTime: "5333 days",
     name: "Pluto",
-    clothesDay: "Apologize to Pluto for not being a full fledged planet anymore and wear your spacesuit",
+    clothesDay:
+      "Apologize to Pluto for not being a full fledged planet anymore and wear your spacesuit",
     clothesNight: "Do the same thing you do during the day",
     sunscreen: "You won't even remember the sun exists"
   }
@@ -148,7 +151,6 @@ var rocketPicked = false;
 
 function clearStorage() {
   localStorage.removeItem("planetImg");
-  
 }
 
 $(".planet-container").on("click", function() {
@@ -165,14 +167,16 @@ $(".planet-container").on("click", function() {
 
   firstAPI();
   secondAPI();
-  
-  var startOverDiv = $("<h4>");
-    startOverDiv.text("Start Over?");
-    $(".newTrip").append(startOverDiv);
-  
+
+  var startOverDiv = $("<a class = 'newBtns'>");
+  startOverDiv.text("Start Over?");
+  startOverDiv.attr("href", "index.html");
+  $(".newTrip").append(startOverDiv);
+
   if (rocketPicked === true) {
-    var readyDiv = $("<h4>");
+    var readyDiv = $("<a class = 'newBtns'>");
     readyDiv.text("LAUNCH");
+    readyDiv.attr("href", "launch.html");
     $(".ready").append(readyDiv);
   }
 });
@@ -185,17 +189,15 @@ $(document).on("click", ".theRockets", function() {
   $(".rocketChoice").append(rocketChoiceDiv);
 
   if (planetPicked === true) {
-    var readyDiv = $("<h4>");
+    var readyDiv = $("<a class = 'newBtns'>");
     readyDiv.text("LAUNCH");
+    readyDiv.attr("href", "launch.html");
     $(".ready").append(readyDiv);
   }
 });
 
-
-
 function firstAPI() {
   var queryURL = "https://api.le-systeme-solaire.net/rest/bodies/" + userPlanet;
-    
 
   $.ajax({
     url: queryURL,
@@ -212,160 +214,170 @@ function firstAPI() {
       localStorage.setItem("aphelion", response.aphelion);
       localStorage.setItem("perihelion", response.perihelion);
     }
-   
   });
-
 }
 
 function secondAPI() {
-  
-  var queryURLNASA = "https://images-api.nasa.gov/search?q=" + userPlanet + "&media_type=image";
+  var queryURLNASA =
+    "https://images-api.nasa.gov/search?q=" + userPlanet + "&media_type=image";
   // console.log(userPlanet);
 
   $.ajax({
     url: queryURLNASA,
     method: "GET"
   }).then(function(responseNASA) {
-    
-    for(var i = 0; i < 4; i++) {
+    for (var i = 0; i < 4; i++) {
       image = responseNASA.collection.items[i].links[0].href;
       planetImg.push(image);
-      
-      localStorage.setItem("planetImg", JSON.stringify(planetImg));
-  
-    }
-    
-  });
 
+      localStorage.setItem("planetImg", JSON.stringify(planetImg));
+    }
+  });
 }
 
 function imgPush() {
   planetImg = JSON.parse(localStorage.getItem("planetImg"));
   userPlanetStored = localStorage.getItem("userPlanet");
-  
-  var jTron = $("<h1 class = 'display-4'>")
+
+  var jTron = $("<h1 class = 'display-4'>");
   jTron.text(planets[userPlanetStored].name);
   $(".for-jtron").append(jTron);
 
   for (var j = 0; j < 4; j++) {
-    
     var picDiv = $("<div class = 'planet-imgs'>");
     var planetImgTag = $("<img class = 'display-images'>");
     planetImgTag.attr("src", planetImg[j]);
     planetImgTag.addClass("pic");
-    
+
     picDiv.prepend(planetImgTag);
     $(".planet-images").prepend(picDiv);
   }
-    var factsDiv = $("<div class = 'theFacts'>");
-    
-    var moonsPar = $("<p class = 'facts'>");
-    moonsPar.prepend("Number of Moons:  " + localStorage.getItem("moons"));
-    factsDiv.prepend(moonsPar);
+  var factsDiv = $("<div class = 'theFacts'>");
 
-    var gravityPar = $("<p class = 'facts'>");
-    gravityPar.prepend("Gravity:  " + localStorage.getItem("gravity") + " m/s <sup>2</sup>");
-    factsDiv.append(gravityPar);
+  var moonsPar = $("<p class = 'facts'>");
+  moonsPar.prepend("Number of Moons:  " + localStorage.getItem("moons"));
+  factsDiv.prepend(moonsPar);
 
-    var minTemp = $("<p class ='facts'>");
-    a = planets[userPlanetStored].surfaceTempMin;
-    minTemp.prepend("Minimum Temperature:  " + a + "<sup>o</sup>F");
-    factsDiv.append(minTemp);
+  var gravityPar = $("<p class = 'facts'>");
+  gravityPar.prepend(
+    "Gravity:  " + localStorage.getItem("gravity") + " m/s <sup>2</sup>"
+  );
+  factsDiv.append(gravityPar);
 
-    var maxTemp = $("<p class ='facts'>");
-    b = planets[userPlanetStored].surfaceTempMax;
-    maxTemp.prepend("Maximum Temperature:  " + b + "<sup>o</sup>F");
-    factsDiv.append(maxTemp);
+  var minTemp = $("<p class ='facts'>");
+  a = planets[userPlanetStored].surfaceTempMin;
+  minTemp.prepend("Minimum Temperature:  " + a + "<sup>o</sup>F");
+  factsDiv.append(minTemp);
 
-    var rotate = $("<p class ='facts'>");
-    c = planets[userPlanetStored].rotation;
-    rotate.prepend("Rotation:  " + c);
-    factsDiv.append(rotate);
+  var maxTemp = $("<p class ='facts'>");
+  b = planets[userPlanetStored].surfaceTempMax;
+  maxTemp.prepend("Maximum Temperature:  " + b + "<sup>o</sup>F");
+  factsDiv.append(maxTemp);
 
-    var day = $("<p class ='facts'>");
-    d = planets[userPlanetStored].dayLength;
-    day.prepend("length of day:  " + d);
-    factsDiv.append(day);
+  var rotate = $("<p class ='facts'>");
+  c = planets[userPlanetStored].rotation;
+  rotate.prepend("Rotation:  " + c);
+  factsDiv.append(rotate);
 
-    var year = $("<p class ='facts'>");
-    e = planets[userPlanetStored].daysPerYear;
-    year.prepend("Days per year:  " + e);
-    factsDiv.append(year);
+  var day = $("<p class ='facts'>");
+  d = planets[userPlanetStored].dayLength;
+  day.prepend("length of day:  " + d);
+  factsDiv.append(day);
 
-    var howBig = $("<p class ='facts'>");
-    f = planets[userPlanetStored].size;
-    howBig.prepend("Size:  " + f);
-    factsDiv.append(howBig);
+  var year = $("<p class ='facts'>");
+  e = planets[userPlanetStored].daysPerYear;
+  year.prepend("Days per year:  " + e);
+  factsDiv.append(year);
 
-    var planetType = $("<p class ='facts'>");
-    g = planets[userPlanetStored].type
-    planetType.prepend("Type of Planet:  " + g);
-    factsDiv.append(planetType);
+  var howBig = $("<p class ='facts'>");
+  f = planets[userPlanetStored].size;
+  howBig.prepend("Size:  " + f);
+  factsDiv.append(howBig);
 
-    var aphelionPar = $("<p class = 'facts'>");
-    var aphelionDisMiles = parseInt(localStorage.getItem("aphelion") * .621371);
-    var y = aphelionDisMiles.toLocaleString();
-    aphelionPar.prepend("Furthest distance from the Sun:  " + y + " Miles");
-    factsDiv.append(aphelionPar);
+  var planetType = $("<p class ='facts'>");
+  g = planets[userPlanetStored].type;
+  planetType.prepend("Type of Planet:  " + g);
+  factsDiv.append(planetType);
 
-    var perihelionPar = $("<p class = 'facts'>");
-    var perihelionDisMiles = parseInt(localStorage.getItem("perihelion") * .621371)
-    var x = perihelionDisMiles.toLocaleString();
-    perihelionPar.prepend("Shortest distance from the Sun:  " + x + " Miles");
-    factsDiv.append(perihelionPar);
+  var aphelionPar = $("<p class = 'facts'>");
+  var aphelionDisMiles = parseInt(localStorage.getItem("aphelion") * 0.621371);
+  var y = aphelionDisMiles.toLocaleString();
+  aphelionPar.prepend("Furthest distance from the Sun:  " + y + " Miles");
+  factsDiv.append(aphelionPar);
 
-    var planetLink = $("<a>");
-    link = planets[userPlanetStored].link;
-    console.log(link);
-    planetLink.attr("href", link);
-    planetLink.text("More Facts");
-    planetLink.addClass("link");
-    factsDiv.append(planetLink);
+  var perihelionPar = $("<p class = 'facts'>");
+  var perihelionDisMiles = parseInt(
+    localStorage.getItem("perihelion") * 0.621371
+  );
+  var x = perihelionDisMiles.toLocaleString();
+  perihelionPar.prepend("Shortest distance from the Sun:  " + x + " Miles");
+  factsDiv.append(perihelionPar);
 
-    $(".theFacts").prepend(factsDiv)
+  var planetLink = $("<a>");
+  link = planets[userPlanetStored].link;
+  console.log(link);
+  planetLink.attr("href", link);
+  planetLink.text("More Facts");
+  planetLink.addClass("link");
+  factsDiv.append(planetLink);
 
-    var toBring = $("<ul>");
+  $(".theFacts").prepend(factsDiv);
 
-    var dayClothes = $("<li>");
-    dayClothes.prepend(planets[userPlanetStored].clothesDay);
-    toBring.append(dayClothes);
+  var toBring = $("<ul>");
 
-    var nightClothes = $("<li>");
-    nightClothes.prepend(planets[userPlanetStored].clothesNight);
-    toBring.append(nightClothes); 
+  var dayClothes = $("<li>");
+  dayClothes.prepend(planets[userPlanetStored].clothesDay);
+  toBring.append(dayClothes);
 
-    var SPF = $("<li>");
-    SPF.prepend(planets[userPlanetStored].sunscreen);
-    toBring.append(SPF);
+  var nightClothes = $("<li>");
+  nightClothes.prepend(planets[userPlanetStored].clothesNight);
+  toBring.append(nightClothes);
 
-    $(".bringItems").append(toBring);
+  var SPF = $("<li>");
+  SPF.prepend(planets[userPlanetStored].sunscreen);
+  toBring.append(SPF);
 
+  $(".bringItems").append(toBring);
 }
 
-function launchInfo () {
+function launchInfo() {
   destinationPlanet = localStorage.getItem("userPlanet");
-  var launchDiv = $("<div class = 'launch'>")
+  var launchDiv = $("<div class = 'launch'>");
   var planetDistance = $("<p class = 'facts'>");
-    planetDistance.prepend("Distance to  "+ planets[destinationPlanet].name + " is "+ planets[destinationPlanet].distance+"."); 
-    launchDiv.prepend(planetDistance);
-    //var launchDiv = $("<div class = 'launch'>");
-    var travelTime = $("<p class = 'facts'>");
-    travelTime.append("It will take you "+  " " + planets[destinationPlanet].travelTime + " to reach " + destinationPlanet);
-    launchDiv.append(travelTime);
-$(".theLaunch").append(launchDiv);
-$(".theLaunch").prepend(launchDiv);
+  planetDistance.prepend(
+    "Good luck brave traveler! Today you are embarking on a perilous journey to  " +
+      planets[destinationPlanet].name +
+      "." +
+      " The distance to " +
+      planets[destinationPlanet].name +
+      " is " +
+      planets[destinationPlanet].distance + "."
+  );
+  launchDiv.prepend(planetDistance);
+  //var launchDiv = $("<div class = 'launch'>");
+  var travelTime = $("<p class = 'facts'>");
+  travelTime.append(
+    "It will take you " +
+      " " +
+      planets[destinationPlanet].travelTime +
+      " to reach " +
+      destinationPlanet
+  );
+  launchDiv.append(travelTime);
+  $(".theLaunch").append(launchDiv);
+  $(".theLaunch").prepend(launchDiv);
 
-};
+  var daysOfTravel = parseInt(planets[destinationPlanet].travelTime);
+var arrivalDate = moment().add(daysOfTravel, "days");
+var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
+console.log(finalDate);
 
-var currentDate= moment().format('MMMM Do YYYY, h:mm:ss a');
-console.log(currentDate);
+var launchDiv = $("<div class = 'launch'>");
+var 
+}
 
-var arrivalDate = moment().add(130, 'days')
-console.log(arrivalDate);
+// var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
+// console.log(currentDate);
 
-
-
-
-
-
-
+// var arrivalDate = moment().add(130, "days");
+// console.log(arrivalDate);

@@ -72,6 +72,16 @@ h5 {
 
 }
 
-.iframe {
-  width: 800;
+.launchInfo {
+  background: #7a3838;
+  color: #ffffff;
+  text-align: center;
+  /* margin-top: 0px;
+  border-radius: 20px;
+  padding-top: 0px;
+  padding-bottom: 20px; */
+  width: 1500px;
+  
 }
+
+
