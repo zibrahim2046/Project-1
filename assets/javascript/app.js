@@ -345,13 +345,15 @@ function launchInfo() {
   var launchDiv = $("<div class = 'launch'>");
   var planetDistance = $("<p class = 'facts'>");
   planetDistance.prepend(
-    "Good luck brave traveler! Today you are embarking on a perilous journey to  " +
+    "Greetings brave traveler! Today you are embarking on a perilous journey to  " +
       planets[destinationPlanet].name +
       "." +
       " The distance to " +
       planets[destinationPlanet].name +
       " is " +
-      planets[destinationPlanet].distance + "."
+      planets[destinationPlanet].distance +
+      ","
+      + " and given your average travel velocity of 25,000 mph..."
   );
   launchDiv.prepend(planetDistance);
   //var launchDiv = $("<div class = 'launch'>");
@@ -365,16 +367,23 @@ function launchInfo() {
   );
   launchDiv.append(travelTime);
   $(".theLaunch").append(launchDiv);
-  $(".theLaunch").prepend(launchDiv);
 
   var daysOfTravel = parseInt(planets[destinationPlanet].travelTime);
-var arrivalDate = moment().add(daysOfTravel, "days");
-var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
-console.log(finalDate);
+  var arrivalDate = moment().add(daysOfTravel, "days");
+  var finalDate = moment(arrivalDate).format("MMMM Do YYYY");
+  console.log(finalDate);
 
-var launchDiv = $("<div class = 'launch'>");
-var 
+  var arriveDate = $("<p class = 'facts'>");
+  arriveDate.append(
+    "You will arrive on " + finalDate)
+    launchDiv.append(arriveDate);
+    $(".theLaunch").append(launchDiv);
 }
+
+
+
+
+ 
 
 // var currentDate = moment().format("MMMM Do YYYY, h:mm:ss a");
 // console.log(currentDate);
