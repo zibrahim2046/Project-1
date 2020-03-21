@@ -84,7 +84,9 @@ h5 {
   
 }
 
-/* .gifs {
-  justify-content: center;
-} */
+.gif {
+  width: 400px;
+  height: 400px;
+  align-items: center;
+}
 
