@@ -345,7 +345,7 @@ function launchInfo() {
   var launchDiv = $("<div class = 'launch'>");
   var planetDistance = $("<p class = 'facts'>");
   planetDistance.prepend(
-    "Greetings brave traveler! Today you are embarking on a perilous journey to  " +
+    "-Greetings brave traveler! Today you are embarking on a perilous journey to  " +
       planets[destinationPlanet].name +
       "." +
       " The distance to " +
@@ -359,7 +359,7 @@ function launchInfo() {
   //var launchDiv = $("<div class = 'launch'>");
   var travelTime = $("<p class = 'facts'>");
   travelTime.append(
-    "It will take you " +
+    "-It will take you " +
       " " +
       planets[destinationPlanet].travelTime +
       " to reach " +
@@ -375,7 +375,7 @@ function launchInfo() {
 
   var arriveDate = $("<p class = 'facts'>");
   arriveDate.append(
-    "You will arrive on " + finalDate)
+    "-Assuming all goes well during your adventure, and you don't collide with any asteroids or debris, you will arrive on " + finalDate + "!")
     launchDiv.append(arriveDate);
     $(".theLaunch").append(launchDiv);
 }
