@@ -352,14 +352,14 @@ function launchInfo() {
       planets[destinationPlanet].name +
       " is " +
       planets[destinationPlanet].distance +
-      ","
-      + " and given your average travel velocity of 25,000 mph..."
+      "."
+      // + " and given your average travel velocity of 25,000 mph..."
   );
   launchDiv.prepend(planetDistance);
   //var launchDiv = $("<div class = 'launch'>");
   var travelTime = $("<p class = 'facts'>");
   travelTime.append(
-    "-It will take you " +
+    "-Given your average velocity of 25,000 mph, it will take you " +
       " " +
       planets[destinationPlanet].travelTime +
       " to reach " +
