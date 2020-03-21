@@ -249,20 +249,7 @@ function imgPush() {
   planetImg = JSON.parse(localStorage.getItem("planetImg"));
   userPlanetStored = localStorage.getItem("userPlanet");
   
-  // var jTron = $("<h1 class = 'display-4'>")
-  // jTron.text(planets[userPlanetStored].name);
-  // $(".for-jtron").append(jTron);
-
-  // var jTron = $("<h1 class = 'ml1'>");
-  // var jTronA = $("<span class = 'line line1>");
-  // jTron.append(jTronA);
-  // var jTronB = $("<span class = 'letters'>")
-  // jTronB.text(planets[userPlanetStored].name);
-  // jTron.append(jTronB);
-  // var jTronC = $("<span class = 'line line2'>");
-  // jTron.append(jTronC);
-
-  // $(".for-jtron").append(jTron);
+  
   $(".letters").text(planets[userPlanetStored].name);
 
 
