@@ -19,4 +19,5 @@ The page is deployed to GitHub pages
 * User will be able to return to the main screen and select another destination and rocket
 
 ## Have fun on the page and use for educational purposes or just for your own curiosity!
-* https://zibrahim2046.github.io/Project-1/planets.html
+
+* https://zibrahim2046.github.io/Space-Vacation/
