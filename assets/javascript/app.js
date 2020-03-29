@@ -151,7 +151,7 @@ function clearStorage() {
   
 }
 
-$(".planet-container").on("click", function() {
+$(document).one("click",".planet-container", function() {
   $(".userChoice").empty();
   $(".newTrip").empty();
   $(".ready").empty();
@@ -181,7 +181,7 @@ $(".planet-container").on("click", function() {
   }
 });
 
-$(document).on("click", ".theRockets", function() {
+$(document).one("click", ".theRockets", function() {
   $(".rocketChoice").empty();
   $(".ready").empty();
   rocketPicked = true;
